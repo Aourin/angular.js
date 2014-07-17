@@ -1146,7 +1146,7 @@ function numberInputType(scope, element, attr, ctrl, $sniffer, $browser) {
   }
 
   ctrl.$formatters.push(function(value) {
-    return validate(ctrl, 'number', ctrl.$isEmpty(value) || isNumber(value), value);
+    return validate(ctrl, 'number', ctrl.$isEmpty(value) || isNumber(value), isNumber(value) ? parseFloat(value) : value);
   });
 }
 
